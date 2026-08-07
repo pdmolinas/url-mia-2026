@@ -1,0 +1,15 @@
+/home/pdms/Documents/url-mia-2026/gitlab/Semana_5/MIA_Lab_5/project/Lab5/bin/Debug/net10.0/Lab5
+/home/pdms/Documents/url-mia-2026/gitlab/Semana_5/MIA_Lab_5/project/Lab5/bin/Debug/net10.0/Lab5.deps.json
+/home/pdms/Documents/url-mia-2026/gitlab/Semana_5/MIA_Lab_5/project/Lab5/bin/Debug/net10.0/Lab5.runtimeconfig.json
+/home/pdms/Documents/url-mia-2026/gitlab/Semana_5/MIA_Lab_5/project/Lab5/bin/Debug/net10.0/Lab5.dll
+/home/pdms/Documents/url-mia-2026/gitlab/Semana_5/MIA_Lab_5/project/Lab5/bin/Debug/net10.0/Lab5.pdb
+/home/pdms/Documents/url-mia-2026/gitlab/Semana_5/MIA_Lab_5/project/Lab5/obj/Debug/net10.0/Lab5.GeneratedMSBuildEditorConfig.editorconfig
+/home/pdms/Documents/url-mia-2026/gitlab/Semana_5/MIA_Lab_5/project/Lab5/obj/Debug/net10.0/Lab5.AssemblyInfoInputs.cache
+/home/pdms/Documents/url-mia-2026/gitlab/Semana_5/MIA_Lab_5/project/Lab5/obj/Debug/net10.0/Lab5.AssemblyInfo.cs
+/home/pdms/Documents/url-mia-2026/gitlab/Semana_5/MIA_Lab_5/project/Lab5/obj/Debug/net10.0/Lab5.csproj.CoreCompileInputs.cache
+/home/pdms/Documents/url-mia-2026/gitlab/Semana_5/MIA_Lab_5/project/Lab5/obj/Debug/net10.0/Lab5.sourcelink.json
+/home/pdms/Documents/url-mia-2026/gitlab/Semana_5/MIA_Lab_5/project/Lab5/obj/Debug/net10.0/Lab5.dll
+/home/pdms/Documents/url-mia-2026/gitlab/Semana_5/MIA_Lab_5/project/Lab5/obj/Debug/net10.0/refint/Lab5.dll
+/home/pdms/Documents/url-mia-2026/gitlab/Semana_5/MIA_Lab_5/project/Lab5/obj/Debug/net10.0/Lab5.pdb
+/home/pdms/Documents/url-mia-2026/gitlab/Semana_5/MIA_Lab_5/project/Lab5/obj/Debug/net10.0/Lab5.genruntimeconfig.cache
+/home/pdms/Documents/url-mia-2026/gitlab/Semana_5/MIA_Lab_5/project/Lab5/obj/Debug/net10.0/ref/Lab5.dll
