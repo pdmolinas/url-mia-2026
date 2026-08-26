@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "YOtcmhwBpMQ=",
+  "success": true,
+  "projectFilePath": "/home/pdms/Documents/url-mia-2026/github/semana-5/Lab5/Lab5.csproj",
+  "expectedPackageFiles": [
+    "/home/pdms/.nuget/packages/microsoft.aspnetcore.app.ref/10.0.11/microsoft.aspnetcore.app.ref.10.0.11.nupkg.sha512"
+  ],
+  "logs": []
+}
