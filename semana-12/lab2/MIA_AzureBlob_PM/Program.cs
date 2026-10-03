@@ -1,12 +1,43 @@
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
 
+// Cargar variables desde .env si existe
+string envPath = Path.Combine(Directory.GetCurrentDirectory(), ".env");
+if (!File.Exists(envPath))
+{
+    envPath = Path.Combine(AppContext.BaseDirectory, ".env");
+}
+
+if (File.Exists(envPath))
+{
+    foreach (var line in File.ReadAllLines(envPath))
+    {
+        var trimmed = line.Trim();
+        if (string.IsNullOrWhiteSpace(trimmed) || trimmed.StartsWith("#")) continue;
+        var parts = trimmed.Split('=', 2);
+        if (parts.Length == 2)
+        {
+            Environment.SetEnvironmentVariable(parts[0].Trim(), parts[1].Trim());
+        }
+    }
+}
+
 // =========================================================================
 // Encabezado y configuración de conexión a Azure Blob Storage
 // =========================================================================
 string connectionString =
     Environment.GetEnvironmentVariable("AZURE_STORAGE_CONNECTION_STRING") ??
+    Environment.GetEnvironmentVariable("AZURE_STORAGE_CONNECTION_STRING_GH") ??
+    Environment.GetEnvironmentVariable("AZURE_STORAGE_CONNECTION_STRING_P") ??
+    Environment.GetEnvironmentVariable("AZURE_STORAGE_CONNECTION_STRING_L") ??
     "";
+
+if (string.IsNullOrWhiteSpace(connectionString))
+{
+    Console.WriteLine("[ERROR] No se encontró la variable de conexión.");
+    Console.WriteLine("Asegúrate de tener configurada AZURE_STORAGE_CONNECTION_STRING en tu .env local o AZURE_STORAGE_CONNECTION_STRING_GH en GitHub Actions.");
+    return;
+}
 
 string containerName = "miaarchivos";
 
@@ -36,6 +67,11 @@ while (!salir)
     Console.Write("Seleccione una opción: ");
 
     string? opcion = Console.ReadLine()?.Trim();
+    if (opcion == null)
+    {
+        salir = true;
+        break;
+    }
     Console.WriteLine();
 
     try
