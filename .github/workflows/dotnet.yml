@@ -1,0 +1,45 @@
+name: Build and Verify Azure Storage App
+
+on:
+  push:
+    branches: [ main, dev ]
+    paths:
+      - 'semana-12/**'
+      - '.github/workflows/dotnet.yml'
+  pull_request:
+    branches: [ main, dev ]
+    paths:
+      - 'semana-12/**'
+      - '.github/workflows/dotnet.yml'
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '10.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore semana-12/lab2/MIA_AzureBlob_PM/MIA_AzureBlob_PM.csproj
+
+    - name: Build project
+      run: dotnet build semana-12/lab2/MIA_AzureBlob_PM/MIA_AzureBlob_PM.csproj --configuration Release --no-restore
+
+    - name: Verify Azure Connection (using GitHub Action Secret)
+      env:
+        AZURE_STORAGE_CONNECTION_STRING_GH: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING_GH }}
+        AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING_GH }}
+      run: |
+        if [ -n "$AZURE_STORAGE_CONNECTION_STRING_GH" ]; then
+          echo "Ejecutando verificación de conexión con Azure Blob Storage..."
+          echo "5" | dotnet run --project semana-12/lab2/MIA_AzureBlob_PM/MIA_AzureBlob_PM.csproj --configuration Release --no-build
+        else
+          echo "Aviso: AZURE_STORAGE_CONNECTION_STRING_GH no está presente (ej. en PR externo). Saltando prueba de conexión."
+        fi
